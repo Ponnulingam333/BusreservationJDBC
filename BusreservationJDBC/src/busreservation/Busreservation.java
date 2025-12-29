@@ -5,8 +5,9 @@ public class Busreservation {
 public static void main(String []args)  {
 		Scanner scan =new Scanner(System.in);
 		int useropt=10;
-	try{     
+   
 		while(useropt==10) {
+			try {
 		  System.out.println("-----------------");
 		System.out.println("Enter 1 to businfo \nEnter 2 to booking \nEnter 3 to other\nEnter 4 to exit");
 		  System.out.println("-----------------");
@@ -56,14 +57,18 @@ public static void main(String []args)  {
 				useropt =10;
 			break;}
 		}}}
+			catch(InputMismatchException s) {
+				 System.out.println("-----------------");
+				 System.out.println("Enter the correct value 5 to continue");
+				 scan.nextLine();
+				 scan.nextInt();
+				}
+				
+					
+		}
+		scan.close();
 }
-catch(InputMismatchException s) {
-	 System.out.println("-----------------");
-	 System.out.println("Enter the correct value 5 to continue");
-	Busreservation.main(null);
-	}
-	scan.close();
-	}
+
 
 	
 	}
